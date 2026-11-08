@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#060606">
+  <title>SkySp — Minecraft-сервер | Привилегии, кейсы, валюта и токены</title>
+  <meta name="description" content="SkySp — Minecraft-сервер нового поколения. Привилегии, донат-кейсы титулов и привилегий, монеты и токены. Играй на SkySp.ru и SkySp.eu.">
+  <meta property="og:title" content="SkySp — новая эра твоего мира">
+  <meta property="og:description" content="Minecraft-сервер SkySp.ru / SkySp.eu. Привилегии, кейсы, валюта и токены в одном месте.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/winter.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/Onest-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/HS_LunaObscura.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/shop.css">
+  <link rel="stylesheet" href="css/ui.css">
+</head>
+<body>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M4 5h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 8H7"/><circle cx="10" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="m3 8 4.5 4L12 5l4.5 7L21 8l-2 10H5L3 8Z"/><path d="M5 21h14M9 14h6"/></symbol>
+    <symbol id="i-chest" viewBox="0 0 24 24"><path d="M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9Z"/><path d="m3 9 1.5-5h15L21 9H3Z"/><path d="M10 13h4v3h-4z"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="m12 7.5 1.7 2.8 3 .8-2.2 2.2.5 3.2-3-1.5-3 1.5.5-3.2-2.2-2.2 3-.8L12 7.5Z"/></symbol>
+    <symbol id="i-token" viewBox="0 0 24 24"><path d="m12 3 8 5v8l-8 5-8-5V8l8-5Z"/><path d="m12 7 4.5 2.8v4.4L12 17l-4.5-2.8V9.8L12 7Z"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M4 4h8l8 8-8 8-8-8V4Z"/><circle cx="9" cy="9" r="1.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="2" y="14" width="4" height="6" rx="2"/><rect x="18" y="14" width="4" height="6" rx="2"/><path d="M20 20a3 3 0 0 1-3 3h-3"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 15v2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+  </svg>
+
+  <div class="page-glow" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#home" aria-label="SkySp — на главную">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGradient" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ffe6a6"/>
+              <stop offset=".45" stop-color="#ffb800"/>
+              <stop offset="1" stop-color="#ff5f00"/>
+            </linearGradient>
+          </defs>
+          <path d="M16 1.5 20 12l10.5 4L20 20l-4 10.5L12 20 1.5 16 12 12l4-10.5Z" fill="url(#logoGradient)"/>
+          <path d="M16 9.5 18 14l4.5 2-4.5 2-2 4.5-2-4.5-4.5-2 4.5-2 2-4.5Z" fill="#080808"/>
+        </svg>
+        <span class="logo__text">SKYSP</span>
+        <span class="logo__sub">RU / EU</span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="Основная навигация">
+        <a class="nav__link is-active" href="#home">Главная</a>
+        <a class="nav__link" href="#shop">Магазин</a>
+        <a class="nav__link" href="#cases">Кейсы</a>
+        <a class="nav__link" href="#play">Как зайти</a>
+        <a class="nav__link" href="#faq">FAQ</a>
+        <div class="nav__meta">
+          <div class="nav__online"><span class="live-dot"></span><b data-online-total>1 285</b> игроков онлайн</div>
+          <div class="nav__servers">
+            <button class="nav__server copy-btn" data-ip="SkySp.ru">
+              <span>RU</span> SkySp.ru
+              <svg class="icon icon-copy"><use href="#i-copy"/></svg>
+              <svg class="icon icon-check"><use href="#i-check"/></svg>
+            </button>
+            <button class="nav__server copy-btn" data-ip="SkySp.eu">
+              <span>EU</span> SkySp.eu
+              <svg class="icon icon-copy"><use href="#i-copy"/></svg>
+              <svg class="icon icon-check"><use href="#i-check"/></svg>
+            </button>
+          </div>
+          <div class="nav__socials">
+            <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://discord.com/" target="_blank" rel="noopener">Discord</a>
+            <a href="https://vk.com/" target="_blank" rel="noopener">VK</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <div class="online-pill" title="Игроков онлайн">
+          <span class="live-dot"></span>
+          <b data-online-total>1 285</b>
+          <span>онлайн</span>
+        </div>
+        <button class="cart-button" type="button" id="openCart" aria-label="Открыть корзину">
+          <svg class="icon"><use href="#i-cart"/></svg>
+          <span class="cart-button__label">Корзина</span>
+          <span class="cart-button__count" data-cart-count>0</span>
+        </button>
+        <button class="burger" type="button" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="primaryNav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__glow hero__glow--warm"></div>
+        <div class="hero__glow hero__glow--white"></div>
+        <div class="hero__video-wrap">
+          <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/flower-poster.jpg" tabindex="-1">
+            <source src="assets/flower-loop.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="hero__grid"></div>
+        <div class="hero__fade"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="live-dot"></span>
+            Minecraft-сеть · Сезон IV
+          </div>
+
+          <h1 class="hero__title">
+            <span class="hero__title-script">SkySp</span>
+            <span class="hero__title-main">Новая эра<br><em>твоего мира</em></span>
+          </h1>
+
+          <p class="hero__desc">
+            Привилегии, донат-кейсы, монеты и токены — всё, чтобы выделиться
+            с первого дня. Один аккаунт, два сервера, безграничные возможности.
+          </p>
+
+          <div class="hero__actions">
+            <a class="button button--primary" href="#shop">
+              Перейти в магазин
+              <svg class="icon"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="button button--ghost" href="#play">
+              <svg class="icon"><use href="#i-play"/></svg>
+              Как начать играть
+            </a>
+          </div>
+
+          <div class="hero__ips">
+            <button class="ip-card copy-btn" type="button" data-ip="SkySp.ru">
+              <span class="ip-card__region">RU</span>
+              <span class="ip-card__body"><small>Играть сейчас</small><strong>SkySp.ru</strong></span>
+              <svg class="icon icon-copy"><use href="#i-copy"/></svg>
+              <svg class="icon icon-check"><use href="#i-check"/></svg>
+            </button>
+            <button class="ip-card copy-btn" type="button" data-ip="SkySp.eu">
+              <span class="ip-card__region ip-card__region--outline">EU</span>
+              <span class="ip-card__body"><small>Европейский сервер</small><strong>SkySp.eu</strong></span>
+              <svg class="icon icon-copy"><use href="#i-copy"/></svg>
+              <svg class="icon icon-check"><use href="#i-check"/></svg>
+            </button>
+          </div>
+
+          <div class="hero__meta">
+            <span><b>12 000+</b> игроков</span>
+            <span><b>24/7</b> поддержка</span>
+            <span><b>1.16 — 1.21</b> Java Edition</span>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Статус серверов">
+          <div class="hero-panel__top">
+            <span class="hero-panel__label">Live status</span>
+            <span class="status-badge"><span class="live-dot"></span> Online</span>
+          </div>
+          <div class="hero-panel__total">
+            <strong data-online-total>1 285</strong>
+            <span>игроков<br>прямо сейчас</span>
+          </div>
+          <div class="hero-panel__server">
+            <div class="hero-panel__server-head"><span><i class="flag">RU</i> SkySp.ru</span><b data-online-ru>864</b></div>
+            <div class="meter"><i data-bar-ru style="width:86%"></i></div>
+          </div>
+          <div class="hero-panel__server">
+            <div class="hero-panel__server-head"><span><i class="flag">EU</i> SkySp.eu</span><b data-online-eu>421</b></div>
+            <div class="meter"><i data-bar-eu style="width:42%"></i></div>
+          </div>
+          <div class="hero-panel__foot">
+            <span>Сезон IV · Winterfall</span>
+            <a href="#play">Подключиться <svg class="icon"><use href="#i-arrow-up"/></svg></a>
+          </div>
+        </aside>
+      </div>
+
+      <a class="hero__scroll" href="#shop" aria-label="Прокрутить к магазину">
+        <span>Листай</span>
+        <i></i>
+      </a>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Промокод <b>SKYSP10</b> — минус 10%</span><i>✦</i>
+        <span>Мгновенная выдача</span><i>✦</i>
+        <span>Кейсы титулов и привилегий</span><i>✦</i>
+        <span>Монеты и токены</span><i>✦</i>
+        <span>SkySp.ru / SkySp.eu</span><i>✦</i>
+        <span>Промокод <b>SKYSP10</b> — минус 10%</span><i>✦</i>
+        <span>Мгновенная выдача</span><i>✦</i>
+        <span>Кейсы титулов и привилегий</span><i>✦</i>
+        <span>Монеты и токены</span><i>✦</i>
+        <span>SkySp.ru / SkySp.eu</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="section shop" id="shop">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="section-tag">01 / Магазин</span>
+            <h2 class="section-title">Прокачай своего <span class="accent">героя</span></h2>
+          </div>
+          <p class="section-head__desc">
+            Донат действует на обоих серверах. Выдача автоматическая —
+            вещи появятся на аккаунте в течение пары минут после оплаты.
+          </p>
+        </div>
+
+        <div class="shop-bar">
+          <div class="shop-tabs" role="tablist" aria-label="Категории товаров">
+            <button class="shop-tab is-active" type="button" role="tab" aria-selected="true" data-category="all">Всё <span data-count="all">26</span></button>
+            <button class="shop-tab" type="button" role="tab" aria-selected="false" data-category="privileges">Привилегии <span data-count="privileges">8</span></button>
+            <button class="shop-tab" type="button" role="tab" aria-selected="false" data-category="cases">Кейсы <span data-count="cases">6</span></button>
+            <button class="shop-tab" type="button" role="tab" aria-selected="false" data-category="currency">Валюта <span data-count="currency">4</span></button>
+            <button class="shop-tab" type="button" role="tab" aria-selected="false" data-category="tokens">Токены <span data-count="tokens">4</span></button>
+            <button class="shop-tab" type="button" role="tab" aria-selected="false" data-category="titles">Титулы <span data-count="titles">4</span></button>
+          </div>
+          <div class="promo-chip">
+            <svg class="icon"><use href="#i-spark"/></svg>
+            Промокод <strong>SKYSP10</strong>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+
+        <div class="shop-more">
+          <button class="button button--outline" type="button" id="loadMore">
+            Показать ещё
+            <svg class="icon"><use href="#i-plus"/></svg>
+          </button>
+          <span>Все покупки защищены и выдаются автоматически</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section world" id="world">
+      <div class="container">
+        <div class="world-card">
+          <img class="world-card__image" src="assets/winter.jpg" alt="Зимний мир Minecraft-сервера SkySp" loading="lazy">
+          <div class="world-card__shade"></div>
+          <div class="world-card__noise"></div>
+
+          <div class="world-card__content" data-reveal>
+            <span class="section-tag">02 / Мир SkySp</span>
+            <h2 class="section-title world-card__title">
+              <span>Место, где</span>
+              <span>рождается</span>
+              <span class="accent">легенда</span>
+            </h2>
+            <p>
+              Бесконечные миры, зимние города и сражения за ресурсы. Строй,
+              исследуй, собирай команду — и оставь свой след в истории сезона.
+            </p>
+            <div class="world-card__stats">
+              <div><strong>12K+</strong><span>игроков в сети</span></div>
+              <div><strong>04</strong><span>сезон Winterfall</span></div>
+              <div><strong>99.9%</strong><span>аптайм серверов</span></div>
+            </div>
+            <a class="button button--light" href="#shop">
+              Выбрать привилегию
+              <svg class="icon"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+
+          <div class="world-card__season" data-reveal style="--delay:.2s">
+            <span>Сезон</span>
+            <strong>IV</strong>
+            <span>Winterfall</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cases" id="cases">
+      <div class="container cases__inner">
+        <div class="cases__intro" data-reveal>
+          <span class="section-tag">03 / Донат-кейсы</span>
+          <h2 class="section-title">Испытай <span class="accent">удачу</span></h2>
+          <p>
+            Четыре типа кейсов: титулы, привилегии, токены и монеты.
+            Внутри — только полезный дроп, а шансы честно указаны для каждого предмета.
+          </p>
+          <div class="cases__actions">
+            <button class="button button--primary" type="button" data-goto-category="cases">
+              Все кейсы
+              <svg class="icon"><use href="#i-arrow-right"/></svg>
+            </button>
+            <span class="cases__note"><span class="live-dot"></span> Дроп доступен сразу после покупки</span>
+          </div>
+          <div class="cases__ghost" aria-hidden="true">LUCK</div>
+        </div>
+
+        <div class="cases__list">
+          <button class="case-tile" type="button" data-case-link="case-titles" data-reveal style="--delay:.05s">
+            <span class="case-tile__icon tone-silver"><svg class="icon"><use href="#i-tag"/></svg></span>
+            <span class="case-tile__body">
+              <small>01 / Titles</small>
+              <strong>Кейс титулов</strong>
+              <span>12 редких титулов · от 149 ₽</span>
+            </span>
+            <svg class="icon case-tile__arrow"><use href="#i-arrow-up"/></svg>
+          </button>
+
+          <button class="case-tile" type="button" data-case-link="case-privileges" data-reveal style="--delay:.1s">
+            <span class="case-tile__icon tone-gold"><svg class="icon"><use href="#i-crown"/></svg></span>
+            <span class="case-tile__body">
+              <small>02 / Privileges</small>
+              <strong>Кейс привилегий</strong>
+              <span>От HERO до GOD · от 249 ₽</span>
+            </span>
+            <svg class="icon case-tile__arrow"><use href="#i-arrow-up"/></svg>
+          </button>
+
+          <button class="case-tile" type="button" data-case-link="case-tokens" data-reveal style="--delay:.15s">
+            <span class="case-tile__icon tone-orange"><svg class="icon"><use href="#i-token"/></svg></span>
+            <span class="case-tile__body">
+              <small>03 / Tokens</small>
+              <strong>Кейс токенов</strong>
+              <span>До 10 000 токенов · от 99 ₽</span>
+            </span>
+            <svg class="icon case-tile__arrow"><use href="#i-arrow-up"/></svg>
+          </button>
+
+          <button class="case-tile" type="button" data-case-link="case-coins" data-reveal style="--delay:.2s">
+            <span class="case-tile__icon tone-white"><svg class="icon"><use href="#i-coin"/></svg></span>
+            <span class="case-tile__body">
+              <small>04 / Coins</small>
+              <strong>Кейс монет</strong>
+              <span>До 500 000 монет · от 79 ₽</span>
+            </span>
+            <svg class="icon case-tile__arrow"><use href="#i-arrow-up"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section play" id="play">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="section-tag">04 / Подключение</span>
+            <h2 class="section-title">Три шага до <span class="accent">SkySp</span></h2>
+          </div>
+          <p class="section-head__desc">
+            Никаких модов и сложных установок. Нужен только Minecraft Java Edition
+            версии 1.16–1.21 и пара минут свободного времени.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step-card" data-reveal>
+            <div class="step-card__top">
+              <span class="step-card__num">01</span>
+              <span class="step-card__icon"><svg class="icon"><use href="#i-play"/></svg></span>
+            </div>
+            <h3>Запусти Minecraft</h3>
+            <p>Открой официальный лаунчер или любимый клиент. Подойдёт Java Edition 1.16 — 1.21.</p>
+            <span class="chip">Java Edition · 1.16 — 1.21</span>
+          </article>
+
+          <article class="step-card" data-reveal style="--delay:.08s">
+            <div class="step-card__top">
+              <span class="step-card__num">02</span>
+              <span class="step-card__icon"><svg class="icon"><use href="#i-server"/></svg></span>
+            </div>
+            <h3>Добавь сервер</h3>
+            <p>Скопируй адрес и вставь его в поле «Добавить сервер». Выбери RU или EU — прогресс общий.</p>
+            <button class="chip chip--action copy-btn" type="button" data-ip="SkySp.ru">
+              <span>SkySp.ru</span>
+              <svg class="icon icon-copy"><use href="#i-copy"/></svg>
+              <svg class="icon icon-check"><use href="#i-check"/></svg>
+            </button>
+          </article>
+
+          <article class="step-card" data-reveal style="--delay:.16s">
+            <div class="step-card__top">
+              <span class="step-card__num">03</span>
+              <span class="step-card__icon"><svg class="icon"><use href="#i-spark"/></svg></span>
+            </div>
+            <h3>Забери свой бонус</h3>
+            <p>Создай персонажа, зайди в магазин и активируй промокод на первую покупку.</p>
+            <span class="chip chip--accent">SKYSP10 · −10%</span>
+          </article>
+        </div>
+
+        <div class="server-grid">
+          <article class="server-card" data-reveal>
+            <div class="server-card__head">
+              <span class="server-card__flag">RU</span>
+              <span class="server-card__status"><span class="live-dot"></span> Онлайн</span>
+              <span class="server-card__version">1.21</span>
+            </div>
+            <div class="server-card__row">
+              <strong>SkySp.ru</strong>
+              <button class="copy-icon copy-btn" type="button" data-ip="SkySp.ru" aria-label="Скопировать IP SkySp.ru">
+                <svg class="icon icon-copy"><use href="#i-copy"/></svg>
+                <svg class="icon icon-check"><use href="#i-check"/></svg>
+              </button>
+            </div>
+            <div class="server-card__meta">
+              <span>Москва · основной сервер</span>
+              <span><b data-online-ru>864</b> / 1 000</span>
+            </div>
+            <div class="meter meter--large"><i data-bar-ru style="width:86%"></i></div>
+          </article>
+
+          <article class="server-card" data-reveal style="--delay:.08s">
+            <div class="server-card__head">
+              <span class="server-card__flag server-card__flag--outline">EU</span>
+              <span class="server-card__status"><span class="live-dot"></span> Онлайн</span>
+              <span class="server-card__version">1.21</span>
+            </div>
+            <div class="server-card__row">
+              <strong>SkySp.eu</strong>
+              <button class="copy-icon copy-btn" type="button" data-ip="SkySp.eu" aria-label="Скопировать IP SkySp.eu">
+                <svg class="icon icon-copy"><use href="#i-copy"/></svg>
+                <svg class="icon icon-check"><use href="#i-check"/></svg>
+              </button>
+            </div>
+            <div class="server-card__meta">
+              <span>Франкфурт · европейский сервер</span>
+              <span><b data-online-eu>421</b> / 1 000</span>
+            </div>
+            <div class="meter meter--large"><i data-bar-eu style="width:42%"></i></div>
+          </article>
+        </div>
+
+        <div class="trust-strip">
+          <div><svg class="icon"><use href="#i-bolt"/></svg><span><b>Мгновенная выдача</b><small>автоматически после оплаты</small></span></div>
+          <div><svg class="icon"><use href="#i-lock"/></svg><span><b>Безопасная оплата</b><small>СБП, карты, ЮMoney</small></span></div>
+          <div><svg class="icon"><use href="#i-headset"/></svg><span><b>Поддержка 24/7</b><small>ответим в течение 15 минут</small></span></div>
+          <div><svg class="icon"><use href="#i-globe"/></svg><span><b>Два сервера</b><small>RU и EU на одном аккаунте</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container faq__inner">
+        <div class="faq__aside" data-reveal>
+          <span class="section-tag">05 / FAQ</span>
+          <h2 class="section-title">Есть <span class="accent">вопросы?</span></h2>
+          <p>Собрали самые частые. Если не нашли ответ — поддержка на связи круглосуточно.</p>
+          <a class="button button--ghost" href="mailto:support@skysp.ru">
+            <svg class="icon"><use href="#i-mail"/></svg>
+            Написать в поддержку
+          </a>
+          <div class="faq__support">
+            <span class="live-dot"></span>
+            Среднее время ответа — 7 минут
+          </div>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq-item" open data-reveal>
+            <summary><span>01</span> Как быстро приходят покупки?<i class="faq-item__icon"></i></summary>
+            <div class="faq-item__body">Автоматически в течение 1–5 минут после подтверждения оплаты. Если сервер перегружен, выдача может занять до 15 минут. Если товар так и не пришёл — напишите в поддержку, приложив номер заказа.</div>
+          </details>
+          <details class="faq-item" data-reveal style="--delay:.05s">
+            <summary><span>02</span> Покупки действуют на обоих серверах?<i class="faq-item__icon"></i></summary>
+            <div class="faq-item__body">Да. Привилегии, титулы и баланс привязаны к аккаунту, а не к конкретному серверу. Вы можете зайти на SkySp.ru или SkySp.eu — прогресс и покупки сохранятся.</div>
+          </details>
+          <details class="faq-item" data-reveal style="--delay:.1s">
+            <summary><span>03</span> Чем токены отличаются от монет?<i class="faq-item__icon"></i></summary>
+            <div class="faq-item__body">Монеты — основная игровая валюта для аукциона и магазина. Токены — премиальная валюта: на них открываются кейсы, покупаются титулы и редкие косметические предметы. Токены нельзя обменять на монеты и наоборот.</div>
+          </details>
+          <details class="faq-item" data-reveal style="--delay:.15s">
+            <summary><span>04</span> Что выпадает из кейсов?<i class="faq-item__icon"></i></summary>
+            <div class="faq-item__body">Кейсы титулов, привилегий, токенов и монет. У каждого кейса свой пул наград и честно указанные шансы — откройте карточку кейса в магазине, чтобы посмотреть состав и вероятности.</div>
+          </details>
+          <details class="faq-item" data-reveal style="--delay:.2s">
+            <summary><span>05</span> Можно ли оплатить с телефона?<i class="faq-item__icon"></i></summary>
+            <div class="faq-item__body">Да. Доступны СБП, банковские карты и ЮMoney. После оплаты вы вернётесь на сайт, а заказ автоматически уйдёт в обработку.</div>
+          </details>
+          <details class="faq-item" data-reveal style="--delay:.25s">
+            <summary><span>06</span> Что делать, если указал неверный ник?<i class="faq-item__icon"></i></summary>
+            <div class="faq-item__body">Сразу напишите в поддержку и приложите номер заказа. Если покупка ещё не была выдана, мы сможем изменить ник. Уже выданные товары перенести нельзя.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section join">
+      <div class="container">
+        <div class="join-card">
+          <img class="join-card__eyes" src="assets/eyes.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="join-card__glow" aria-hidden="true"></div>
+          <div class="join-card__content" data-reveal>
+            <span class="section-tag">06 / Комьюнити</span>
+            <h2 class="section-title">Твоё место<br>уже <span class="accent">занято?</span></h2>
+            <p>12 000 игроков уже строят свою историю на SkySp. Осталось только скопировать IP и зайти.</p>
+            <div class="join-card__actions">
+              <button class="button button--primary copy-btn" type="button" data-ip="SkySp.ru">
+                Скопировать IP
+                <svg class="icon icon-copy"><use href="#i-copy"/></svg>
+                <svg class="icon icon-check"><use href="#i-check"/></svg>
+              </button>
+              <a class="button button--ghost" href="https://discord.com/" target="_blank" rel="noopener">
+                Discord
+                <svg class="icon"><use href="#i-arrow-up"/></svg>
+              </a>
+              <a class="button button--ghost" href="https://t.me/" target="_blank" rel="noopener">
+                Telegram
+                <svg class="icon"><use href="#i-arrow-up"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="join-card__wordmark" aria-hidden="true">SkySp</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="logo logo--footer" href="#home" aria-label="SkySp — на главную">
+            <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+              <defs>
+                <linearGradient id="logoGradientFooter" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#ffe6a6"/>
+                  <stop offset=".45" stop-color="#ffb800"/>
+                  <stop offset="1" stop-color="#ff5f00"/>
+                </linearGradient>
+              </defs>
+              <path d="M16 1.5 20 12l10.5 4L20 20l-4 10.5L12 20 1.5 16 12 12l4-10.5Z" fill="url(#logoGradientFooter)"/>
+              <path d="M16 9.5 18 14l4.5 2-4.5 2-2 4.5-2-4.5-4.5-2 4.5-2 2-4.5Z" fill="#080808"/>
+            </svg>
+            <span class="logo__text">SKYSP</span>
+          </a>
+          <p>Minecraft-сервер нового поколения. Привилегии, кейсы и валюта для тех, кто хочет большего.</p>
+          <div class="footer__socials">
+            <a href="https://t.me/" target="_blank" rel="noopener">Telegram <svg class="icon"><use href="#i-arrow-up"/></svg></a>
+            <a href="https://discord.com/" target="_blank" rel="noopener">Discord <svg class="icon"><use href="#i-arrow-up"/></svg></a>
+            <a href="https://vk.com/" target="_blank" rel="noopener">VK <svg class="icon"><use href="#i-arrow-up"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h3>Магазин</h3>
+          <a href="#shop" data-footer-category="privileges">Привилегии</a>
+          <a href="#shop" data-footer-category="cases">Донат-кейсы</a>
+          <a href="#shop" data-footer-category="currency">Монеты</a>
+          <a href="#shop" data-footer-category="tokens">Токены</a>
+          <a href="#shop" data-footer-category="titles">Титулы</a>
+        </div>
+
+        <div class="footer__col">
+          <h3>Сервер</h3>
+          <a href="#play">Как зайти</a>
+          <a href="#world">Мир SkySp</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://discord.com/" target="_blank" rel="noopener">Discord</a>
+          <a href="#shop">Промокод SKYSP10</a>
+        </div>
+
+        <div class="footer__col footer__col--support">
+          <h3>Поддержка</h3>
+          <a href="mailto:support@skysp.ru">support@skysp.ru</a>
+          <p>Отвечаем ежедневно<br>с 09:00 до 23:00 МСК</p>
+          <div class="footer__servers">
+            <button class="footer__server copy-btn" type="button" data-ip="SkySp.ru">SkySp.ru <svg class="icon icon-copy"><use href="#i-copy"/></svg><svg class="icon icon-check"><use href="#i-check"/></svg></button>
+            <button class="footer__server copy-btn" type="button" data-ip="SkySp.eu">SkySp.eu <svg class="icon icon-copy"><use href="#i-copy"/></svg><svg class="icon icon-check"><use href="#i-check"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__payments">
+        <span>Принимаем к оплате</span>
+        <div class="pay-badges">
+          <span>СБП</span><span>МИР</span><span>VISA</span><span>Mastercard</span><span>ЮMoney</span>
+        </div>
+        <span class="footer__secure"><svg class="icon"><use href="#i-lock"/></svg> Защищённые платежи</span>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2022–2026 SkySp. Все права защищены.</span>
+        <span>Не связан с Mojang AB. Все средства идут на развитие проекта.</span>
+        <span>Демонстрационная витрина</span>
+      </div>
+
+      <div class="footer__watermark" aria-hidden="true">SKYSP</div>
+    </div>
+  </footer>
+
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer__backdrop" data-close-cart></div>
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <header class="cart-panel__head">
+        <div>
+          <span class="section-tag">Корзина</span>
+          <h2 id="cartTitle">Твой заказ <span data-cart-count>0</span></h2>
+        </div>
+        <button class="icon-button" type="button" data-close-cart aria-label="Закрыть корзину"><svg class="icon"><use href="#i-close"/></svg></button>
+      </header>
+      <div class="cart-panel__items" id="cartItems"></div>
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty__icon"><svg class="icon"><use href="#i-cart"/></svg></div>
+        <h3>Пока пусто</h3>
+        <p>Добавь привилегию, кейс или валюту — и они появятся здесь.</p>
+        <button class="button button--primary" type="button" data-close-cart data-go-shop>В магазин</button>
+      </div>
+      <footer class="cart-panel__foot" id="cartFoot">
+        <div class="cart-panel__promo">Промокод <strong>SKYSP10</strong> применяется на этапе оплаты</div>
+        <div class="cart-panel__total"><span>Итого</span><strong data-cart-total>0 ₽</strong></div>
+        <button class="button button--primary button--full" type="button" id="checkoutButton">
+          Перейти к оплате
+          <svg class="icon"><use href="#i-arrow-right"/></svg>
+        </button>
+        <div class="cart-panel__note"><svg class="icon"><use href="#i-lock"/></svg> Безопасная оплата · выдача автоматически</div>
+      </footer>
+    </aside>
+  </div>
+
+  <div class="modal" id="caseModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--case" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+      <button class="icon-button modal__close" type="button" data-close-modal aria-label="Закрыть"><svg class="icon"><use href="#i-close"/></svg></button>
+      <div id="caseModalContent"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-checkout></div>
+    <div class="modal__panel modal__panel--checkout" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button class="icon-button modal__close" type="button" data-close-checkout aria-label="Закрыть"><svg class="icon"><use href="#i-close"/></svg></button>
+      <div id="checkoutContent"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast__icon"><svg class="icon"><use href="#i-check"/></svg></span>
+    <span id="toastText">Готово</span>
+  </div>
+
+  <noscript><div class="noscript">Для работы магазина и корзины включите JavaScript в браузере.</div></noscript>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
